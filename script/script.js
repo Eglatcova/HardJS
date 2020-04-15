@@ -1,19 +1,52 @@
-let num = 266219;
-  arr = num.toString().split(''); 
-  mul = 1;
+'use srtict';
+//part 1
+   daysRu = [
+  'Воскресенье',
+  'Понедельник',
+  'Вторник',
+  'Среда',
+  'Четверг',
+  'Пятница',
+  'Суббота'
+];
 
-  for(let i=0;i<arr.length; i++){
-    mul = mul * parseInt(arr[i]);
+  daysEng = [
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday'
+  ];
+
+let 
+  lang = 'ru';
+
+if (lang === 'ru') {
+  console.log(daysRu);
+} else {
+  console.log(daysEng);
 }
 
-cub = mul ** 3;
+switch (lang) {
+  case 'ru':
+    console.log(daysRu);
+    break;
+  case 'en':
+    console.log(daysEng);
+    break;
+}
 
-strCub = cub.toString();
+const langArr = new Map([
+  ['ru', ['Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье']],
+  ['en', ['Monday, Tuesday, Wensday, Thursday, Friday, Saturday, Sunday']]
+]);
 
+console.log(langArr.get(lang));
 
-console.log(arr);  
-console.log(mul);
-console.log(cub);
-console.log(strCub.slice(0, 2));
-  
+//part2
 
+let namePerson = 'Максим';
+
+namePerson === 'Артем' ? console.log('директор') : namePerson === 'Максим' ? console.log('преподаватель') : console.log('студент');
