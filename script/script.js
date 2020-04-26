@@ -1,20 +1,33 @@
 'use srtict';
-foo = function (str) {
-  if (typeof str !== 'string') {
-    console.log('Это не строка');
-    return;
+
+let arr = [
+  '4111111',
+  '33333',
+  '456789',
+  '134567',
+  '2345678',
+  '87653',
+  '23456666666'
+];
+
+for (let num of arr) {
+  num2 = num.slice(0, 1);
+  for (let subnum of num2) {
+    if (+num2 === 4 || +num2 === 2) {
+      console.log(num);
+    }
   }
-  strNew = str.trim();
-  if (strNew.length > 30) {
-    strNew2 = strNew.slice(0, 30) + '...';
-    console.log(strNew2);
-  } else {
-    console.log(strNew);
+}
+
+for (let i = 1; i <= 11; i++) {
+  let bb;
+  for (let n = 2; n < i; n++) {
+    res = i / n;
+    if (Number.isInteger(res) === true) {
+      bb = i;
+    }
   }
-};
-
-a = '               ggggggggggggggggggg6666666666666666669999           ';
-
-foo(a);
-
-//console.log(foo(ty));
+  if (i != bb) {
+    console.log(i + ' ' + 'Делители этого числа: 1 и' + ' ' + i);
+  }
+}
