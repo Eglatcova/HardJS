@@ -38,6 +38,7 @@ week.forEach((element, index) => {
   }
 
   if (week[index] === getWeekDay(date)) {
+    html = week[index];
     html = html.bold();
     div.innerHTML = html;
     document.body.append(div);
