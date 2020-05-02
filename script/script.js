@@ -1,46 +1,14 @@
 'use srtict';
 
-const week = [
+const colorcreate = document.querySelector('.colorcreate'),
+colorDiv = document.querySelector('.container'),
+title = document.querySelector('.title');
 
-  'Monday',
-  'Tuesday',
-  'Wednesday',
-  'Thursday',
-  'Friday',
-  'Saturday',
-  'Sunday'
 
-];
-
-const date = new Date();
-
-const getWeekDay = (date) => {
-  date = new Date();
-  let days = week;
-  let day = date.getDay() - 1;
-  return days[day];
+const create = () => {
+ let colorNew = '#' + (Math.random().toString(16)).substring(2,8).toUpperCase();
+ colorDiv.style.background = colorNew;
+ title.innerHTML = colorNew;
 };
 
-week.forEach((element, index) => {
-
-  const div = document.createElement('div');
-
-  let html = week[index];
-
-  if (index === 5 || index === 6) {
-    html = html.italics();
-    div.innerHTML = html;
-    document.body.append(div);
-
-  } else {
-    div.innerHTML = html;
-    document.body.append(div);
-  }
-
-  if (week[index] === getWeekDay(date)) {
-    html = week[index];
-    html = html.bold();
-    div.innerHTML = html;
-    document.body.append(div);
-  }
-});
+colorcreate.addEventListener('click', create);
